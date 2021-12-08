@@ -454,7 +454,7 @@ jobs:
       name: node/default
       tag: '14.17.3'
     description: Compressing images with imagemin for prod
-    working_directory: ~/circleci-docs
+    working_directory: *workspace_root
     steps:
       - attach_workspace:
           at: ./generated-site
@@ -462,7 +462,7 @@ jobs:
           pkg-manager: yarn
           cache-version: &npm-cache-version v1 # Gets cache version from project environment variable (E.g v1)
       - run:
-          name: optimize images
+          name: Optimize Images
           command: yarn optimize-img
 
     
