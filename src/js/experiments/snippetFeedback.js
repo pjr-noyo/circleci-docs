@@ -167,7 +167,7 @@ export class SnippetFeedback {
    * */
   _renderCharCount() {
     let charCount = this.currCharCount;
-    let charCountLimited =
+    let charCountLimited = Math.min(SnippetFeedback.MAX_CHAR_COUNT, charCount)
       charCount > SnippetFeedback.MAX_CHAR_COUNT
         ? SnippetFeedback.MAX_CHAR_COUNT
         : charCount;
